@@ -6,10 +6,16 @@
 //  Copyright © 2017 Alistair Baxter. All rights reserved.
 //
 
+#include <string>
 #include <iostream>
+
+#include "analyse.hpp"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
-    return 0;
+
+    int result = analyse("test1.txt", "result1.txt");
+    
+    return result;
 }

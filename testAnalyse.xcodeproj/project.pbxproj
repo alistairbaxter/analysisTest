@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F32D97DF1F18AC7000A82BD1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F32D97DE1F18AC7000A82BD1 /* main.cpp */; };
+		F32D97E71F18AC8400A82BD1 /* libanalyse.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F32D97E61F18AC8400A82BD1 /* libanalyse.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		F32D97DB1F18AC7000A82BD1 /* testAnalyse */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = testAnalyse; sourceTree = BUILT_PRODUCTS_DIR; };
 		F32D97DE1F18AC7000A82BD1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		F32D97E61F18AC8400A82BD1 /* libanalyse.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libanalyse.dylib; path = "../../../Library/Developer/Xcode/DerivedData/Analysis-gpgocigvofcmieezyuwfnybfvwfn/Build/Products/Debug/libanalyse.dylib"; sourceTree = "<group>"; };
+		F32D97E91F18AE0700A82BD1 /* test1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = test1.txt; path = TestData/test1.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F32D97E71F18AC8400A82BD1 /* libanalyse.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,8 +45,10 @@
 		F32D97D21F18AC7000A82BD1 = {
 			isa = PBXGroup;
 			children = (
+				F32D97E81F18AD8300A82BD1 /* TestData */,
 				F32D97DD1F18AC7000A82BD1 /* testAnalyse */,
 				F32D97DC1F18AC7000A82BD1 /* Products */,
+				F32D97E51F18AC8400A82BD1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +66,22 @@
 				F32D97DE1F18AC7000A82BD1 /* main.cpp */,
 			);
 			path = testAnalyse;
+			sourceTree = "<group>";
+		};
+		F32D97E51F18AC8400A82BD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F32D97E61F18AC8400A82BD1 /* libanalyse.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F32D97E81F18AD8300A82BD1 /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				F32D97E91F18AE0700A82BD1 /* test1.txt */,
+			);
+			name = TestData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +240,7 @@
 		F32D97E31F18AC7000A82BD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = ../analyse/analyse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -225,6 +248,7 @@
 		F32D97E41F18AC7000A82BD1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = ../analyse/analyse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
