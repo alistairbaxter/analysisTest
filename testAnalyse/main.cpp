@@ -13,6 +13,10 @@
 
 #include "analyse.hpp"
 
+// Since this is the test program, also include internal headers
+// so that we can reuse our text file i/o
+#include "NumberListParser.hpp"
+
 /**
  * Return the string corresponding to an analysis error number
  *
