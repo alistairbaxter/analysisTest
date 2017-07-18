@@ -16,6 +16,7 @@
 // Since this is the test program, also include internal headers
 // so that we can reuse our text file i/o
 #include "NumberListParser.hpp"
+#include "NumberListWriter.hpp"
 
 /**
  * Return the string corresponding to an analysis error number
@@ -90,31 +91,26 @@ int64_t expectedOutputValues[NumTests][3] =
     { 0, 0, 0 }
 };
 
-int main(int argc, const char * argv[]) {
-
-    
+int main(int argc, const char * argv[])
+{
     int64_t veryLargeNumber = INT64_MAX / 2;
     
     // Generate a test file with very large numbers in
-    std::ofstream outputFile( testInputFiles[2] );
-    if (outputFile.is_open())
     {
-        outputFile << veryLargeNumber << std::endl;
-        outputFile << veryLargeNumber << std::endl;
-        outputFile << veryLargeNumber << std::endl;
+        analysis::NumberListWriter testFile3(testInputFiles[2]);
+        testFile3.writeNumber(veryLargeNumber);
+        testFile3.writeNumber(veryLargeNumber);
+        testFile3.writeNumber(veryLargeNumber);
+        
     }
-    outputFile.close();
     
     // Generate a test file with very large, but valid numbers in
-    outputFile.open( testInputFiles[3] );
-    if (outputFile.is_open())
     {
-        outputFile << veryLargeNumber << std::endl;
-        outputFile << -veryLargeNumber << std::endl;
-        outputFile << veryLargeNumber << std::endl;
+        analysis::NumberListWriter testFile4(testInputFiles[3]);
+        testFile4.writeNumber( veryLargeNumber);
+        testFile4.writeNumber(-veryLargeNumber);
+        testFile4.writeNumber( veryLargeNumber);
     }
-    outputFile.close();
-    
     
     
     // Run through all tests
@@ -131,18 +127,17 @@ int main(int argc, const char * argv[]) {
         {
             // Test resulting values
             
-            std::ifstream inputFile( testOutputFiles[i] );
+            analysis::NumberListParser outputsParser( testOutputFiles[i] );
             
-            if (inputFile.is_open())
+            if (outputsParser.isValid())
             {
-                // Read a line
-                std::string line;
-                getline (inputFile,line);
-                int64_t countVal = atoll(line.c_str());
-                getline (inputFile,line);
-                int64_t sumVal = atoll(line.c_str());
-                getline (inputFile,line);
-                int64_t averageVal = atoll(line.c_str());
+                int64_t countVal = 0;
+                int64_t sumVal = 0;
+                int64_t averageVal = 0;
+                
+                outputsParser.getNextNumber(countVal);
+                outputsParser.getNextNumber(sumVal);
+                outputsParser.getNextNumber(averageVal);
 
                 std::cout << "Expected output count: " << expectedOutputValues[i][0];
                 std::cout << " sum: " << expectedOutputValues[i][1];
@@ -156,7 +151,6 @@ int main(int argc, const char * argv[]) {
                 assert(sumVal == expectedOutputValues[i][1]);
                 assert(averageVal == expectedOutputValues[i][2]);
             }
-            inputFile.close();
         }
     
     }
