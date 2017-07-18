@@ -28,6 +28,7 @@
 		F32D97DE1F18AC7000A82BD1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		F32D97E61F18AC8400A82BD1 /* libanalyse.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libanalyse.dylib; path = "../../../Library/Developer/Xcode/DerivedData/Analysis-gpgocigvofcmieezyuwfnybfvwfn/Build/Products/Debug/libanalyse.dylib"; sourceTree = "<group>"; };
 		F32D97E91F18AE0700A82BD1 /* test1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = test1.txt; path = TestData/test1.txt; sourceTree = "<group>"; };
+		F371EB0E1F1E75F0000DFEC9 /* test5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = test5.txt; path = TestData/test5.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				F32D97E91F18AE0700A82BD1 /* test1.txt */,
+				F371EB0E1F1E75F0000DFEC9 /* test5.txt */,
 			);
 			name = TestData;
 			sourceTree = "<group>";
@@ -272,6 +274,7 @@
 				F32D97E41F18AC7000A82BD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
